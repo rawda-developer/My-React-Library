@@ -10,6 +10,7 @@ import { ProductSmallItem } from './products/ProductSmallItem';
 import { Modal } from './Modal';
 import { UserInfo } from './persons/UserInfo';
 import { UserLoader } from './persons/UserLoader';
+import { CurrentUserLoader } from './persons/CurrentUserLoader';
 export const Left = ({ message }) => (
   <div style={{ backgroundColor: 'red' }}>{message}</div>
 );
@@ -28,6 +29,11 @@ function App() {
       <UserLoader userId='345'>
         <UserInfo />
       </UserLoader>
+      <hr />
+      <h2>CurrentUserLoader</h2>
+      <CurrentUserLoader>
+        <UserInfo />
+      </CurrentUserLoader>
     </>
   );
 }
