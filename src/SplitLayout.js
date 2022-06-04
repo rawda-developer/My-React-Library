@@ -1,23 +1,20 @@
-import { Left, Right } from './App';
 import styled from 'styled-components';
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 `;
 const Pane = styled.div`
-  flex: 1 1 auto;
+  flex: ${(props) => props.weight};
   overflow: hidden;
 `;
-export const SplitLayout = ({ left: Left, right: Right }) => {
+export const SplitLayout = ({ leftWeight, rightWeight, children }) => {
+  const [left, right] = children;
   return (
     <Container>
-      <Pane>
-        <Left />
-      </Pane>
-      <Pane>
-        <Right />
-      </Pane>
+      <Pane weight={leftWeight}>{left}</Pane>
+      <Pane weight={rightWeight}>{right}</Pane>
     </Container>
   );
 };
