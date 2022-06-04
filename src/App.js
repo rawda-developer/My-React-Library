@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
 import { SplitLayout } from './SplitLayout';
 import { RegularList } from './RegularList';
 import { personsData } from './persons/personsData';
 import { productsData } from './products/productsData';
 import { PersonItem } from './persons/PersonItem';
 import { ProductItem } from './products/ProductItem';
+import { NumberedList } from './NumberedList';
+import { PersonSmallItem } from './persons/PersonSmallItem';
+import { ProductSmallItem } from './products/ProductSmallItem';
+
 export const Left = ({ message }) => (
   <div style={{ backgroundColor: 'red' }}>{message}</div>
 );
@@ -28,6 +30,16 @@ function App() {
         items={productsData}
         resourceName='product'
         itemComponent={ProductItem}
+      />
+      <NumberedList
+        items={personsData}
+        resourceName='person'
+        itemComponent={PersonSmallItem}
+      />
+      <NumberedList
+        items={productsData}
+        resourceName='product'
+        itemComponent={ProductSmallItem}
       />
     </>
   );
