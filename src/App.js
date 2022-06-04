@@ -8,6 +8,8 @@ import { NumberedList } from './NumberedList';
 import { PersonSmallItem } from './persons/PersonSmallItem';
 import { ProductSmallItem } from './products/ProductSmallItem';
 import { Modal } from './Modal';
+import { UserInfo } from './persons/UserInfo';
+import { UserLoader } from './persons/UserLoader';
 export const Left = ({ message }) => (
   <div style={{ backgroundColor: 'red' }}>{message}</div>
 );
@@ -17,11 +19,15 @@ export const Right = ({ message }) => (
 function App() {
   return (
     <>
-      <Modal>
-        <div>
-          <p>This is a modal</p>
-        </div>
-      </Modal>
+      <UserLoader userId='123'>
+        <UserInfo />
+      </UserLoader>
+      <UserLoader userId='234'>
+        <UserInfo />
+      </UserLoader>
+      <UserLoader userId='345'>
+        <UserInfo />
+      </UserLoader>
     </>
   );
 }
