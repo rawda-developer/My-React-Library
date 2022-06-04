@@ -11,6 +11,8 @@ import { Modal } from './Modal';
 import { UserInfo } from './persons/UserInfo';
 import { UserLoader } from './persons/UserLoader';
 import { CurrentUserLoader } from './persons/CurrentUserLoader';
+import { ProductInfo } from './products/ProductInfo';
+import { ResourceLoader } from './ResourceLoader';
 export const Left = ({ message }) => (
   <div style={{ backgroundColor: 'red' }}>{message}</div>
 );
@@ -20,20 +22,12 @@ export const Right = ({ message }) => (
 function App() {
   return (
     <>
-      <UserLoader userId='123'>
+      <ResourceLoader resourceUrl='/current-user' resourceName='user'>
         <UserInfo />
-      </UserLoader>
-      <UserLoader userId='234'>
-        <UserInfo />
-      </UserLoader>
-      <UserLoader userId='345'>
-        <UserInfo />
-      </UserLoader>
-      <hr />
-      <h2>CurrentUserLoader</h2>
-      <CurrentUserLoader>
-        <UserInfo />
-      </CurrentUserLoader>
+      </ResourceLoader>
+      <ResourceLoader resourceUrl='/products/1234' resourceName='product'>
+        <ProductInfo />
+      </ResourceLoader>
     </>
   );
 }
