@@ -1,10 +1,8 @@
-import { withUser } from './HOCs/withUser';
-import { UserInfo } from './persons/UserInfo';
-const UserInfoLoader = withUser(UserInfo, '123');
+import { EditableUserForm } from './HOCs/EditableUserForm';
 function App() {
   return (
     <>
-      <UserInfoLoader />
+      <EditableUserForm />
     </>
   );
 }
