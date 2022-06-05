@@ -37,7 +37,7 @@ const ModalBody = styled.div`
   padding: 20px;
 `;
 
-export const Modal = ({ children }) => {
+export const UnControlledModal = ({ children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
