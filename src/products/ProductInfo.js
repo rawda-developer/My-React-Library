@@ -1,4 +1,6 @@
-export const ProductInfo = ({ product }) => {
+import { useResource } from '../customHooks/useResource';
+export const ProductInfo = ({ productId }) => {
+  const product = useResource(`/products/${productId}`);
   const { name, price, description, rating } = product || {};
 
   return (

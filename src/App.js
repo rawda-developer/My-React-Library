@@ -1,9 +1,11 @@
-import { UserInfo } from './persons/UserInfo';
+import { ProductInfo } from './products/ProductInfo';
 
 function App() {
   return (
     <>
-      <UserInfo />
+      <ProductInfo productId={1234} />
+      <ProductInfo productId={2345} />
+      <ProductInfo productId={3456} />
     </>
   );
 }
