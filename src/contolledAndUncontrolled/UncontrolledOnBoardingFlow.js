@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-export const UncontrolledOnBoardingEvent = ({ children, onFinish }) => {
+export const UncontrolledOnBoardingFlow = ({ children, onFinish }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [data, setData] = useState({});
 

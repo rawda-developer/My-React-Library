@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UncontrolledOnBoardingEvent } from './contolledAndUncontrolled/UncontrolledOnBoardingEvent';
+import { UncontrolledOnBoardingFlow } from './contolledAndUncontrolled/UncontrolledOnBoardingFlow';
 const Step1 = ({ gotoNext }) => {
   return (
     <div>
@@ -43,13 +43,11 @@ const Step3 = ({ gotoNext }) => {
 function App() {
   return (
     <>
-      <UncontrolledOnBoardingEvent
-        onFinish={() => alert('Onboarding complete')}
-      >
+      <UncontrolledOnBoardingFlow onFinish={() => alert('Onboarding complete')}>
         <Step1 />
         <Step2 />
         <Step3 />
-      </UncontrolledOnBoardingEvent>
+      </UncontrolledOnBoardingFlow>
     </>
   );
 }
