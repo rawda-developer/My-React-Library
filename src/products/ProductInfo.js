@@ -1,6 +1,13 @@
-import { useResource } from '../customHooks/useResource';
+import { useDataResource } from '../customHooks/useDataResource';
+import axios from 'axios';
+const getProduct = (url) => async () => {
+  const { data } = await axios.get(url);
+  console.log(data);
+  return data;
+};
 export const ProductInfo = ({ productId }) => {
-  const product = useResource(`/products/${productId}`);
+  const product = useDataResource(getProduct(`/products/${productId}`));
+  console.log(product);
   const { name, price, description, rating } = product || {};
 
   return (
