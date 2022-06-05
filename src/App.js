@@ -1,17 +1,10 @@
-import { printProps } from './HOCs/printProps';
-const MyComponent = ({ name, age }) => {
-  return (
-    <div>
-      <h1>{name}</h1>
-      <h2>{age}</h2>
-    </div>
-  );
-};
-const MyComponentWrapper = printProps(MyComponent);
+import { withUser } from './HOCs/withUser';
+import { UserInfo } from './persons/UserInfo';
+const UserInfoLoader = withUser(UserInfo, '123');
 function App() {
   return (
     <>
-      <MyComponentWrapper name='John' age='27' />
+      <UserInfoLoader />
     </>
   );
 }
