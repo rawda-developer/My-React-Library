@@ -1,9 +1,9 @@
-import { EditableResouceForm } from './HOCs/EditableResourceForm';
+import { UserInfo } from './persons/UserInfo';
 
 function App() {
   return (
     <>
-      <EditableResouceForm />
+      <UserInfo />
     </>
   );
 }
