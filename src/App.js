@@ -9,7 +9,7 @@ const Step1 = ({ gotoNext }) => {
         ipsum eu dignissim consectetur, nisi nisl aliquam nunc, eu aliquam nisl
         nisi eu nisl.
       </p>
-      <button onClick={gotoNext}>Next</button>
+      <button onClick={() => gotoNext('Step 1 Data')}>Next</button>
     </div>
   );
 };
@@ -23,7 +23,7 @@ const Step2 = ({ gotoNext }) => {
         ipsum eu dignissim consectetur, nisi nisl aliquam nunc, eu aliquam nisl
         nisi eu nisl.
       </p>
-      <button onClick={gotoNext}>Next</button>
+      <button onClick={() => gotoNext('Step 2 data')}>Next</button>
     </div>
   );
 };
@@ -36,14 +36,16 @@ const Step3 = ({ gotoNext }) => {
         ipsum eu dignissim consectetur, nisi nisl aliquam nunc, eu aliquam nisl
         nisi eu nisl.
       </p>
-      <button onClick={gotoNext}>Next</button>
+      <button onClick={() => gotoNext('Step 3 data')}>Next</button>
     </div>
   );
 };
 function App() {
   return (
     <>
-      <UncontrolledOnBoardingEvent onFinish={() => console.log('Finished')}>
+      <UncontrolledOnBoardingEvent
+        onFinish={() => alert('Onboarding complete')}
+      >
         <Step1 />
         <Step2 />
         <Step3 />

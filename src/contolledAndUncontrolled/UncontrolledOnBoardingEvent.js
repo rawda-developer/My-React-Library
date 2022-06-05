@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-export const UncontrolledOnBoardingEvent = ({ children, gotoNext }) => {
+export const UncontrolledOnBoardingEvent = ({ children, onFinish }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [data, setData] = useState({});
 
@@ -9,10 +9,14 @@ export const UncontrolledOnBoardingEvent = ({ children, gotoNext }) => {
       gotoNext: (data) => {
         setData({ ...data });
         if (currentStep === children.length - 1) {
-          gotoNext(data);
+          onFinish(data);
         } else {
           setCurrentStep(currentStep + 1);
         }
+        setData({
+          ...data,
+        });
+        console.log(data);
       },
     });
   }
