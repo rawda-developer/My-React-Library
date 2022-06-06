@@ -1,33 +1,17 @@
-import { RecursiveComponent } from './FunctionalProgramming/RecursiveComponent';
-
-const nestedObject = {
-  a: 1,
-  b: {
-    b1: {
-      b11: 1,
-      b12: 2,
-    },
-    b2: {
-      b21: 1,
-      message: 'Hi',
-      b22: {
-        b221: 1,
-      },
-    },
-  },
-  c: {
-    c1: 1,
-    c2: 2,
-    c3: {
-      c31: 1,
-      c32: 2,
-    },
-  },
-};
+import {
+  Button,
+  DangerButton,
+  SuccessButton,
+  WarningButton,
+  smallDangerButton,
+} from './FunctionalProgramming/Composition';
 function App() {
   return (
     <>
-      <RecursiveComponent data={nestedObject} />
+      <Button color='red' text='Danger' />
+      <Button color='green' text='Success' />
+      <Button color='orange' text='Warning' />
+      <smallDangerButton text='Small Danger' />
     </>
   );
 }
