@@ -1,17 +1,14 @@
 import {
-  Button,
-  DangerButton,
   SuccessButton,
+  DangerButton,
   WarningButton,
-  smallDangerButton,
-} from './FunctionalProgramming/Composition';
+} from './FunctionalProgramming/PartiallyApply';
 function App() {
   return (
     <>
-      <Button color='red' text='Danger' />
-      <Button color='green' text='Success' />
-      <Button color='orange' text='Warning' />
-      <smallDangerButton text='Small Danger' />
+      <SuccessButton text='Success' />
+      <DangerButton text='Danger' />
+      <WarningButton text='Warning' />
     </>
   );
 }
